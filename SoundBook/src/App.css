@@ -1,0 +1,120 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', 'Arial', sans-serif;
+  background: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  min-height: 600px;
+  background: #fff;
+  box-shadow: 0 0 16px #eee;
+}
+
+.sidebar {
+  width: 10%;
+  min-width: 80px;
+  background: #e0e7ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  border-right: 2px solid #d1d5db;
+}
+
+.tab {
+  width: 80%;
+  margin: 0.5rem 0;
+  padding: 1rem 0.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #d1d5db44;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3b4252;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tab:hover {
+  background: #f0f4fa;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2vw;
+  width: 80vw;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+}
+
+.sound-btn {
+  background: #e0e7ef;
+  border: none;
+  border-radius: 18px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  box-shadow: 0 2px 8px #d1d5db44;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sound-btn:active {
+  background: #cbd5e1;
+  transform: scale(0.97);
+}
+.sound-btn:disabled {
+  background: #f3f4f6;
+  color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 2px solid #d1d5db;
+    padding: 0.5rem 0;
+    justify-content: flex-start;
+  }
+  .tab {
+    width: auto;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  .main {
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .grid {
+    width: 90vw;
+    max-width: 400px;
+    gap: 3vw;
+  }
+}
